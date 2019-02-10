@@ -1,13 +1,13 @@
-from contextlib import contextmanager
-import shlex
-import os
-import sys
-import subprocess
-import yaml
 import datetime
-from cookiecutter.utils import rmtree
+import os
+import shlex
+import subprocess
+import sys
+from contextlib import contextmanager
 
+import yaml
 from click.testing import CliRunner
+from cookiecutter.utils import rmtree
 
 if sys.version_info > (3, 0):
     import importlib
@@ -190,7 +190,7 @@ def test_using_pytest(cookies):
 
 
 def test_not_using_pytest(cookies):
-    with bake_in_temp_dir(cookies) as result:
+    with bake_in_temp_dir(cookies, extra_context={'use_pytest': 'n'}) as result:
         assert result.project.isdir()
         test_file_path = result.project.join('tests/test_python_boilerplate.py')
         lines = test_file_path.readlines()

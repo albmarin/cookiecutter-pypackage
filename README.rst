@@ -2,17 +2,16 @@
 Cookiecutter PyPackage
 ======================
 
-.. image:: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/shield.svg
-     :target: https://pyup.io/repos/github/audreyr/cookiecutter-pypackage/
+.. image:: https://pyup.io/repos/github/git-albertomarin/cookiecutter-pypackage/shield.svg
+     :target: https://pyup.io/repos/github/git-albertomarin/cookiecutter-pypackage/
      :alt: Updates
 
-.. image:: https://travis-ci.org/audreyr/cookiecutter-pypackage.svg?branch=master
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage     
+.. image:: https://travis-ci.org/git-albertomarin/cookiecutter-pypackage.svg?branch=master
+    :target: https://travis-ci.org/git-albertomarin/cookiecutter-pypackage
 
 Cookiecutter_ template for a Python package.
 
-* GitHub repo: https://github.com/audreyr/cookiecutter-pypackage/
-* Documentation: https://cookiecutter-pypackage.readthedocs.io/
+* GitHub repo: https://github.com/git-albertomarin/cookiecutter-pypackage/
 * Free software: BSD license
 
 Features
@@ -20,9 +19,9 @@ Features
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``py.test``
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 2.7, 3.4, 3.5, 3.6
+* Tox_ testing: Setup to easily test for Python 3.6
 * Sphinx_ docs: Documentation ready for generation with, for example, ReadTheDocs_
-* Bumpversion_: Pre-configured version bumping with a single command
+* Bump2version_: Pre-configured version bumping with a single command
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
@@ -34,13 +33,13 @@ Build Status
 Linux:
 
 .. image:: https://img.shields.io/travis/audreyr/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyr/cookiecutter-pypackage
+    :target: https://travis-ci.org/git-albertomarin/cookiecutter-pypackage
     :alt: Linux build status on Travis CI
 
 Windows:
 
 .. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
+    :target: https://ci.appveyor.com/project/git-albertomarin/cookiecutter-pypackage/branch/master
     :alt: Windows build status on Appveyor
 
 Quickstart
@@ -53,7 +52,7 @@ Cookiecutter 1.4.0 or higher)::
 
 Generate a Python package project::
 
-    cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
+    cookiecutter https://github.com/git-albertomarin/cookiecutter-pypackage.git
 
 Then:
 
@@ -143,7 +142,7 @@ make my own packaging experience better.
 .. _Sphinx: http://sphinx-doc.org/
 .. _ReadTheDocs: https://readthedocs.io/
 .. _`pyup.io`: https://pyup.io/
-.. _Bumpversion: https://github.com/peritus/bumpversion
+.. _Bump2version: https://github.com/c4urself/bump2version
 .. _Punch: https://github.com/lgiordani/punch
 .. _PyPi: https://pypi.python.org/pypi
 

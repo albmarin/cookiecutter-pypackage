@@ -17,6 +17,12 @@ if __name__ == '__main__':
     if '{{ cookiecutter.use_pytest }}' == 'y':
         remove_file('tests/__init__.py')
 
+    if '{{ cookiecutter.use_pre_commit_hooks }}' != 'y':
+        remove_file('.pre-commit-config.yaml')
+
+    if '{{ cookiecutter.add_pyup_badge }}' != 'y':
+        remove_file('.pyup.yml')
+
     if 'no' in '{{ cookiecutter.command_line_interface|lower }}':
         cli_file = os.path.join('{{ cookiecutter.project_slug }}', 'cli.py')
         remove_file(cli_file)

@@ -20,6 +20,7 @@
 #
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath('..'))
 
 import {{ cookiecutter.project_slug }}
@@ -90,7 +91,12 @@ html_theme = 'alabaster'
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    "description": "{{ cookiecutter.project_short_description }}",
+    "github_user": "{{ cookiecutter.github_username }}",
+    "github_repo": "{{ cookiecutter.project_slug }}",
+    "fixed_sidebar": True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

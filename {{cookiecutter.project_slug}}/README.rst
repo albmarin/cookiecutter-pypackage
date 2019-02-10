@@ -7,6 +7,11 @@
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_slug }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_slug }}
 
+{% if cookiecutter.add_codecov_badge == 'y' %}
+.. image:: https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
+{% endif %}
+
 .. image:: https://img.shields.io/travis/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.svg
         :target: https://travis-ci.org/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}
 
@@ -24,20 +29,31 @@
 
 {{ cookiecutter.project_short_description }}
 
-{% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
-* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
-{% endif %}
+Installing
+----------
+
+Install and update using pip:
+
+.. code-block:: text
+
+    pip install -U {{ cookiecutter.project_slug }}
+
+Example Usage
+-------------
+{{ cookiecutter.project_name }} can be imported and used within your own project like so.
+
+.. code-block:: python
+
+    import {{ cookiecutter.project_slug }}
 
 Features
 --------
 
 * TODO
 
-Credits
--------
+{% if is_open_source %}
+Links
+---------------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+* Documentation: https://{{ cookiecutter.project_slug | replace("_", "-") }}.readthedocs.io.
+{% endif %}
