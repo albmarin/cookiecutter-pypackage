@@ -6,6 +6,8 @@ import sys
 
 import click
 
+from .options import get_version
+
 
 @click.command()
 @click.option(
@@ -13,6 +15,14 @@ import click
     default="INFO",
     help="Set the logging level",
     type=click.Choice(["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG"]),
+)
+@click.option(
+    '--version',
+    help='Show the App version',
+    expose_value=False,
+    callback=get_version,
+    is_flag=True,
+    is_eager=True
 )
 def main(log, args=None):
     """Console script for {{cookiecutter.project_slug}}."""
