@@ -1,4 +1,4 @@
-pip==19.2
+pip==19.0.2
 bump2version==0.5.10
 wheel==0.33.0
 watchdog==0.9.0
@@ -9,7 +9,7 @@ coverage==4.5.2
 Sphinx==1.8.4
 alabaster==0.7.12
 twine==1.13.0
-{% if cookiecutter.command_line_interface == 'y' -%}
+{% if cookiecutter.command_line_interface|lower == "click" -%}
 click >= 7.0{% endif %}
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest==4.2.1

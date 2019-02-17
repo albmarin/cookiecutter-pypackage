@@ -10,8 +10,8 @@ def get_version(ctx, param, value):
         return
 
     message = (
-        f'Python {platform.python_version()}\n'
-        f'{{cookiecutter.project_slug}} {__version__}'
+        f'Python v{platform.python_version()}\n'
+        f'{{ cookiecutter.project_name }} v{__version__}'
     )
     click.echo(message, color=ctx.color)
     ctx.exit()
