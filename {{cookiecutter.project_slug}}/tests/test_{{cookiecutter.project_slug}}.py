@@ -41,12 +41,19 @@ def test_content(response):
 def test_command_line_interface():
     """Test the CLI."""
     runner = CliRunner()
-    result = runner.invoke(cli.main)
+
+    result = runner.invoke(cli.cli)
     assert result.exit_code == 0
-    assert '{{ cookiecutter.project_slug }}.cli.main' in result.output
-    help_result = runner.invoke(cli.main, ['--help'])
+    assert 'Console script for {{ cookiecutter.project_name }}' in result.output
+
+    help_result = runner.invoke(cli.cli, ["--help"])
     assert help_result.exit_code == 0
-    assert re.search(r'--help\s*Show this message and exit.', help_result.output)
+    assert re.search(r"--help\s*Show this message and exit.", help_result.output)
+
+    run_result = runner.invoke(cli.cli, ["run"])
+    assert run_result.exit_code == 0
+    assert '{{ cookiecutter.project_slug }}.cli.run_command' in run_result.output
+
 {%- endif %}
 {%- else %}
 
@@ -67,11 +74,17 @@ class Test{{ cookiecutter.project_slug|title }}(unittest.TestCase):
     def test_command_line_interface(self):
         """Test the CLI."""
         runner = CliRunner()
-        result = runner.invoke(cli.main)
+        result = runner.invoke(cli.cli)
+
         assert result.exit_code == 0
-        assert '{{ cookiecutter.project_slug }}.cli.main' in result.output
-        help_result = runner.invoke(cli.main, ['--help'])
+        assert "Console script for {{ cookiecutter.project_name }}" in result.output
+
+        help_result = runner.invoke(cli.cli, ["--help"])
         assert help_result.exit_code == 0
-        assert re.search(r'--help\s*Show this message and exit.', help_result.output)
+        assert re.search(r"--help\s*Show this message and exit.", help_result.output)
+
+        run_result = runner.invoke(cli.cli, ["run"])
+        assert run_result.exit_code == 0
+        assert '{{ cookiecutter.project_slug }}.cli.run_command' in run_result.output
 {%- endif %}
 {%- endif %}
