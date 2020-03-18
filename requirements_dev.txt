@@ -6,4 +6,4 @@ pytest-cookies==0.3.0
 watchdog==0.9.0
 Sphinx==1.8.4
 alabaster==0.7.12
-codecov==2.0.15
+codecov==2.0.22
